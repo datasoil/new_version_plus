@@ -1,4 +1,4 @@
-library new_version_plus;
+library;
 
 import 'dart:convert';
 import 'dart:io';
@@ -93,7 +93,7 @@ class NewVersionPlus {
 
   /// This checks the version status, then displays a platform-specific alert
   /// with buttons to dismiss the update alert, or go to the app store.
-  showAlertIfNecessary({required BuildContext context, LaunchModeVersion launchModeVersion = LaunchModeVersion.normal}) async {
+  Future<void> showAlertIfNecessary({required BuildContext context, LaunchModeVersion launchModeVersion = LaunchModeVersion.normal}) async {
     final VersionStatus? versionStatus = await getVersionStatus();
 
     if (versionStatus != null && versionStatus.canUpdate) {
